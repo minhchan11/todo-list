@@ -1,0 +1,11 @@
+#results {
+  display:none;
+}
+.yourname {
+  cursor: pointer;
+  color: #0088cc;
+}
+
+.yourname:hover {
+  text-decoration: underline;
+}
