@@ -11,19 +11,20 @@ function Task(name, priority, due, assigned) {
   this.assigned = assigned;
 }
 
+//this adds to our toDoList array
 Task.prototype.addToList = function() {
  toDoList.push(this);
 }
 
-function createList() {
-  for (var index = 0; index < toDoList.length; index++) {
-  console.log(toDoList[index])
-  $("#results").append("<h2>" + toDoList[index].fullname + "</h2>")
-  $("#results").append("<li>" + toDoList[index].priority + "</li>")
-  $("#results").append("<li>" + toDoList[index].due + "</li>")
-  $("#results").append("<li>" + toDoList[index].assigned + "</li>");
-  return true }
-}
+//
+function createList(individualTask) {
+
+  $("#results").append("<h2>" + individualTask.fullname + "</h2>");
+  $("#results").append("<li>" + individualTask.priority + "</li>");
+  $("#results").append("<li>" + individualTask.due + "</li>");
+  $("#results").append("<li>" + individualTask.assigned + "</li>");
+  }
+
 
 //USER INTERFACE
 $("document").ready(function() {
@@ -36,10 +37,14 @@ $("document").ready(function() {
     var Assigned = $("input#assigned").val();
 
     var individualTask = new Task(Name, Priority, Due, Assigned);
+    $("#results").val("")
     $("#results").show();
 
     individualTask.addToList();
-    createList();
-
+    createList(individualTask);
+    $("#results h2").click(function(){
+      $(this).toggleClass("cross");
+      $("#result h2").children("li").hide();
+    })
   });
 });
