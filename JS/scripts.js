@@ -30,6 +30,7 @@ $("document").ready(function() {
       $("ul#todolist").append("<li>" + list.Thing3 + "</li>")
       $("ul#todolist").append("<li>" + list.Thing4 + "</li>")
       $("ul#todolist").append("<li>" + list.Thing5 + "</li>")
+      $("li").click(function() {$(this).toggleClass("cross")});
     });
   });
 });

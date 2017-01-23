@@ -9,3 +9,7 @@
 .yourname:hover {
   text-decoration: underline;
 }
+
+.cross {
+  text-decoration: line-through;
+}
