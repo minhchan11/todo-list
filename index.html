@@ -12,24 +12,25 @@
    <div class="container">
      <form id="user-input">
        <h1>What do you need to do today</h1>
-       <label>Your name:</label>
+       <label>Name of task:</label>
        <input type="text" id="name">
-       <label>1st thing to do:</label>
-       <input type="text" id="thing1">
-       <label>2ndthing to do:</label>
-       <input type="text" id="thing2">
-       <label>3rd thing to do:</label>
-       <input type="text" id="thing3">
-       <label>4th thing to do:</label>
-       <input type="text" id="thing4">
-       <label>5th thing to do:</label>
-       <input type="text" id="thing5">
+       <label>Priority:</label>
+       <input type="text" id="priority">
+       <label>Due Date:</label>
+       <input type="text" id="due">
+       <label>Assigned by:</label>
+       <input type="text" id="assigned">
        <button type="submit" class="btn btn-secondary">Submit to see your to-do list</button>
      </form>
-     <h3 class="yourname"></h3>
+     <h3 class="taskName"></h3>
      <div id="results">
-       <p>Things you need to do are:</p>
-       <ul id="todolist"></ul>
+       <p>Information about your task:</p>
+       Priority:
+       <ul id="priority-toDo"></ul>
+       Due date:
+       <ul id="dueDate-toDo"></ul>
+       Assigned by:
+       <ul id="assigned-toDo"></ul>
    </div>
   </body>
 </html>
