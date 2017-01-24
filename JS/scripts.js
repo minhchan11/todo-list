@@ -45,8 +45,8 @@ $("document").ready(function() {
     // $(".title").click(function(){
       $(".title").last().click(function(){
         $(this).toggleClass("crossOut");
-        console.log($(this).children());
-        // $(this).siblings("ul .details").toggle();
+      $(this).next().hide();
+
     });
   });
 });
