@@ -13,17 +13,16 @@ function Task(name, priority, due, assigned) {
 
 //this adds to our toDoList array
 Task.prototype.addToList = function() {
- toDoList.push(this);
+  toDoList.push(this);
 }
 
 //
 function createList(individualTask) {
-
   $("#results").append("<h2 class='title'>" + individualTask.fullname + "</h2>");
-  $("#results").append("<li class='details'>" + individualTask.priority + "</li>");
-  $("#results").append("<li class='details'>" + individualTask.due + "</li>");
-  $("#results").append("<li class='details'>" + individualTask.assigned + "</li>");
-  }
+  $("#results").append("<li> Priority: " + individualTask.priority + "</li>");
+  $("#results").append("<li> Due date: " + individualTask.due + "</li>");
+  $("#results").append("<li> Assigned by: " + individualTask.assigned + "</li>");
+}
 
 
 //USER INTERFACE
@@ -42,11 +41,9 @@ $("document").ready(function() {
 
     individualTask.addToList();
     createList(individualTask);
-    // $(".title").click(function(){
-      $(".title").last().click(function(){
-        $(this).toggleClass("crossOut");
-      $(this).nextUntil(".title").hide();
-
+    $(".title").last().click(function(){
+      $(this).toggleClass("crossOut");
+      $(this).nextUntil(".title").toggle();
     });
   });
 });
