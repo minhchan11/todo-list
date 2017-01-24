@@ -45,7 +45,7 @@ $("document").ready(function() {
     // $(".title").click(function(){
       $(".title").last().click(function(){
         $(this).toggleClass("crossOut");
-      $(this).next().hide();
+      $(this).nextUntil(".title").hide();
 
     });
   });
