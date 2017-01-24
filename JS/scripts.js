@@ -19,10 +19,10 @@ Task.prototype.addToList = function() {
 //
 function createList(individualTask) {
 
-  $("#results").append("<h2>" + individualTask.fullname + "</h2>");
-  $("#results").append("<li>" + individualTask.priority + "</li>");
-  $("#results").append("<li>" + individualTask.due + "</li>");
-  $("#results").append("<li>" + individualTask.assigned + "</li>");
+  $("#results").append("<h2 class='title'>" + individualTask.fullname + "</h2>");
+  $("#results").append("<li class='details'>" + individualTask.priority + "</li>");
+  $("#results").append("<li class='details'>" + individualTask.due + "</li>");
+  $("#results").append("<li class='details'>" + individualTask.assigned + "</li>");
   }
 
 
@@ -42,9 +42,11 @@ $("document").ready(function() {
 
     individualTask.addToList();
     createList(individualTask);
-    $("#results h2").click(function(){
-      $(this).toggleClass("cross");
-      $("#result h2").children("li").hide();
-    })
+    // $(".title").click(function(){
+      $(".title").last().click(function(){
+        $(this).toggleClass("crossOut");
+        console.log($(this).children());
+        // $(this).siblings("ul .details").toggle();
+    });
   });
 });
